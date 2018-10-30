@@ -18,11 +18,11 @@ namespace SynchronizationContext.Common.Samples
                 {
                     break;
                 }
-                Thread.Sleep(50);
+                Thread.Sleep(50); //some work
 
-                synchronizationContext.Send(OnProgressChanged, i); //swith method calling in main thread
+                synchronizationContext.Send(OnProgressChanged, i); //swith method calling to main thread
             }
-            synchronizationContext.Send(OnWorkCompleted, _cancelled); //switch method calling in main thread
+            synchronizationContext.Send(OnWorkCompleted, _cancelled); //switch method calling to main thread
         }
 
         public void Cancel(System.Threading.SynchronizationContext synchronizationContext) => _cancelled = true;

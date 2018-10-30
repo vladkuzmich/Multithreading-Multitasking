@@ -8,8 +8,8 @@ namespace SynchronizationContext.Wpf
     public partial class MainWindow : Window
     {
         private ProgressBarSample _progressBarSample;
-        private readonly DispatcherSynchronizationContext synchronizationContext;
-        
+        private readonly DispatcherSynchronizationContext synchronizationContext; // SynchronizationContext special for WPF
+
         public MainWindow()
         {
             InitializeComponent();
