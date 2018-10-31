@@ -39,6 +39,7 @@ namespace TaskScheduler.WinForms
             progressBarSample.ProgressChanged += OnProgressChanged;
 
             button1.Enabled = false;
+            // Do work execute in new thread, but work completed will be start in main thread (ui-thread)
             System.Threading.Tasks.Task.Factory
                 .StartNew(() => progressBarSample.DoWork())
                 .ContinueWith((t, o) => WorkCompleted(t.Result), null, taskScheduler);
