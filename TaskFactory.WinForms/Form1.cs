@@ -36,6 +36,7 @@ namespace TaskFactory.WinForms
             button1.Enabled = false;
             progressBarSample = new ProgressBarSample();
             progressBarSample.ProgressChanged += OnProgressChanged;
+
             //progressBarSample.WorkCompleted += OnWorkCompleted;
             var cancelled = await Task<bool>.Factory.StartNew(() => progressBarSample.DoWork());
             

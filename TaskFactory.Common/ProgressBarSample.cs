@@ -6,8 +6,8 @@ namespace TaskFactory.Common
     {
         private bool _cancelled = false;
 
-        public Action<bool> WorkCompleted;
-        public Action<int> ProgressChanged;
+        public event Action<bool> WorkCompleted;
+        public event Action<int> ProgressChanged;
 
         public bool DoWork()
         {
